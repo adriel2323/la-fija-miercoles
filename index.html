@@ -4,244 +4,247 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>Tengo algo para vos 💌</title>
+<title>Para la abuela más linda 🌼</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&family=Nunito:wght@600;700;800&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --mantel: rgba(214, 92, 82, .30);
-    --papel: #fffaf4;
-    --cacao: #4e372e;
-    --suave: #8b6f63;
-    --rosa: #e07a6e;
-    --rosa-osc: #c9645a;
-    --salvia: #8fae8b;
-    --manteca: #f9e3ae;
+    --fondo: #fff7dc;
+    --papel: #fffefa;
+    --texto: #3f2d24;
+    --suave: #6e5a4e;
+    --amarillo: #f6c533;
+    --amarillo-osc: #e0a514;
+    --centro: #d9821f;
+    --rosa: #f3b5b9;
+    --rosa-osc: #c95d6a;
+    --hoja: #6f9a5a;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+  html { font-size: 20px; }
   html, body { height: 100%; }
   body {
     font-family: 'Nunito', system-ui, sans-serif;
     font-weight: 600;
-    color: var(--cacao);
-    /* mantel a cuadros */
-    background-color: #fdf1ea;
-    background-image:
-      linear-gradient(90deg, var(--mantel) 50%, transparent 50%),
-      linear-gradient(var(--mantel) 50%, transparent 50%);
-    background-size: 64px 64px;
+    color: var(--texto);
+    background:
+      radial-gradient(circle at 15% 10%, rgba(246, 197, 51, .28), transparent 40%),
+      radial-gradient(circle at 85% 90%, rgba(243, 181, 185, .45), transparent 45%),
+      var(--fondo);
     overflow: hidden;
   }
-  /* luz cálida de vela: centro iluminado, bordes en penumbra */
-  body::before {
-    content: ''; position: fixed; inset: 0; pointer-events: none;
-    background: radial-gradient(circle at 50% 42%, rgba(255, 236, 200, .55), rgba(92, 40, 30, .38) 95%);
-  }
   main {
-    position: relative;
+    position: relative; z-index: 1;
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 28px 22px 64px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    padding: 28px 18px 60px;
     overflow-y: auto;
   }
-  /* cada paso es una notita de papel pegada con cinta */
   .paso {
-    display: none; position: relative;
-    width: 100%; max-width: 400px; text-align: center;
+    display: none;
+    width: 100%; max-width: 440px; text-align: center;
     background: var(--papel);
-    border-radius: 26px;
-    padding: 44px 24px 32px;
-    box-shadow: 0 18px 40px rgba(78, 40, 30, .28), 0 2px 0 rgba(255, 255, 255, .8) inset;
-    transform: rotate(-1.2deg);
+    border-radius: 30px;
+    padding: 34px 24px 30px;
+    border: 3px solid #fbe7a6;
+    box-shadow: 0 20px 45px rgba(201, 93, 106, .18);
   }
-  .paso:nth-of-type(even) { transform: rotate(1deg); }
-  .paso::before {
-    content: ''; position: absolute; top: -13px; left: 50%;
-    width: 110px; height: 28px; margin-left: -55px;
-    background: rgba(249, 227, 174, .85);
-    border-left: 2px dotted rgba(255, 255, 255, .7);
-    border-right: 2px dotted rgba(255, 255, 255, .7);
-    transform: rotate(-3deg);
-    box-shadow: 0 2px 4px rgba(78, 40, 30, .12);
-  }
-  .paso.activo { display: block; animation: entrar .7s cubic-bezier(.2, .9, .3, 1.2); }
-  @keyframes entrar { from { opacity: 0; transform: translateY(26px) rotate(-4deg) scale(.96); } }
+  .paso.activo { display: block; animation: entrar .8s ease; }
+  @keyframes entrar { from { opacity: 0; transform: translateY(20px) scale(.97); } }
 
   h1 {
-    font-family: 'Caveat', cursive; font-weight: 700;
-    font-size: 2.9rem; line-height: 1.05; margin-bottom: 12px;
+    font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-weight: 700;
+    font-size: 2.1rem; line-height: 1.15; margin-bottom: 14px; color: var(--rosa-osc);
   }
-  p { font-size: 1.08rem; line-height: 1.55; color: var(--suave); margin-bottom: 22px; }
-  .grande { font-size: 4.6rem; line-height: 1; margin-bottom: 10px; }
+  p { font-size: 1.1rem; line-height: 1.55; color: var(--suave); margin-bottom: 22px; }
+  .ayuda { font-size: 1rem; color: var(--rosa-osc); font-weight: 800; }
 
   button {
-    font: inherit; font-weight: 800; font-size: 1.05rem;
-    border: none; border-radius: 18px;
-    padding: 14px 26px;
-    background: var(--rosa); color: #fff;
+    font: inherit; font-weight: 800; font-size: 1.15rem;
+    min-height: 62px; padding: 14px 32px;
+    border: none; border-radius: 999px;
+    background: var(--amarillo); color: var(--texto);
     cursor: pointer;
-    box-shadow: 0 6px 14px rgba(224, 122, 110, .4);
-    transition: transform .15s, box-shadow .15s;
+    box-shadow: 0 6px 0 var(--amarillo-osc), 0 10px 20px rgba(224, 165, 20, .3);
+    transition: transform .12s, box-shadow .12s;
   }
-  button:active { transform: scale(.95); box-shadow: 0 2px 6px rgba(224, 122, 110, .4); }
+  button:active { transform: translateY(4px); box-shadow: 0 2px 0 var(--amarillo-osc); }
   .oculto { visibility: hidden; opacity: 0; }
-  .aparece { visibility: visible; opacity: 1; transition: opacity .6s; }
+  .aparece { visibility: visible; opacity: 1; transition: opacity .8s; }
 
-  /* Paso 0: sobre */
-  #sobre {
-    background: none; box-shadow: none; padding: 0;
-    font-size: 6.5rem; line-height: 1;
-    animation: latir 1.6s ease-in-out infinite;
-  }
-  @keyframes latir { 50% { transform: scale(1.1) rotate(-5deg); } }
+  /* Flores */
+  .flor { transform-box: fill-box; transform-origin: center; transition: transform 1.1s cubic-bezier(.3, 1.4, .5, 1); }
+  .cerrada .flor { transform: scale(.28) rotate(-60deg); }
 
-  /* Paso 2: pistas */
-  .pistas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 24px; }
-  .pista { aspect-ratio: 3 / 4; perspective: 600px; cursor: pointer; }
-  .pista:nth-child(1) { transform: rotate(-3deg); }
-  .pista:nth-child(3) { transform: rotate(3deg); }
-  .pista-int {
-    position: relative; width: 100%; height: 100%;
-    transition: transform .7s cubic-bezier(.3, 1.3, .5, 1); transform-style: preserve-3d;
-  }
-  .pista.vuelta .pista-int { transform: rotateY(180deg); }
-  .cara {
-    position: absolute; inset: 0;
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    border-radius: 16px; backface-visibility: hidden; padding: 8px;
-    box-shadow: 0 6px 14px rgba(78, 40, 30, .16);
-  }
-  .frente {
-    background: var(--rosa); color: #fff;
-    font-family: 'Caveat', cursive; font-size: 3.2rem;
-    border: 3px dashed rgba(255, 255, 255, .55);
-  }
-  .dorso { background: var(--manteca); transform: rotateY(180deg); font-size: .88rem; line-height: 1.25; font-weight: 700; }
-  .dorso span { font-size: 2rem; margin-bottom: 6px; }
+  /* Paso 0: el ramo */
+  #ramo { background: none; box-shadow: none; padding: 0; min-height: 0; width: 100%; max-width: 290px; display: block; margin: 0 auto 6px; }
+  #ramo svg { width: 100%; height: auto; display: block; }
+  #ramo.cerrada { animation: mecer 2.4s ease-in-out infinite; }
+  @keyframes mecer { 50% { transform: rotate(-3deg) scale(1.03); } }
+  #ramo .flor:nth-of-type(2) { transition-delay: .15s; }
 
-  /* Paso 3: adivinanza */
-  .opciones { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
-  .opciones button {
-    background: #fff; color: var(--cacao);
-    border: 2px solid #f3dfd2; box-shadow: 0 4px 10px rgba(78, 40, 30, .08);
-    padding: 16px 8px;
+  /* Paso 1: florcitas con mensajes */
+  .mensajes { display: grid; gap: 14px; margin-bottom: 24px; text-align: left; }
+  .mensaje {
+    display: flex; align-items: center; gap: 14px;
+    background: #fff9e6; border-radius: 22px; padding: 10px 16px 10px 10px;
+    cursor: pointer; border: 2px dashed #f4d98a;
   }
-  .opciones button.mal { animation: temblar .4s; opacity: .4; }
-  @keyframes temblar { 25% { transform: translateX(-6px); } 75% { transform: translateX(6px); } }
-  #respuesta { min-height: 1.4em; margin-bottom: 0; color: var(--rosa-osc); font-family: 'Caveat', cursive; font-size: 1.6rem; line-height: 1; }
+  .mensaje svg { width: 74px; height: 74px; flex: none; }
+  .mensaje span { font-size: 1.1rem; color: var(--suave); }
+  .mensaje.abierta { border-style: solid; border-color: #f9e3a0; background: #fff3cc; }
+  .mensaje.abierta span { color: var(--texto); font-weight: 800; }
 
-  /* Paso 4: revelación */
-  .datos { display: grid; gap: 12px; margin-bottom: 24px; }
-  .dato {
-    background: #fff; border: 2px dashed #ecc9a0; border-radius: 16px; padding: 15px;
-    font-size: 1.05rem; cursor: pointer; color: var(--suave);
-    transition: background .4s;
+  /* Paso 2: la cartita */
+  .carta {
+    text-align: left; font-size: 1.12rem; line-height: 1.65; color: var(--texto);
+    background: repeating-linear-gradient(#fffefa 0 37px, #f6e6c4 37px 38px);
+    padding: 6px 4px 14px; margin-bottom: 22px;
   }
-  .dato.abierto {
-    background: var(--manteca); border-style: solid; border-color: var(--manteca);
-    color: var(--cacao); cursor: default;
-    font-family: 'Caveat', cursive; font-weight: 700; font-size: 1.7rem; line-height: 1.1;
-  }
+  .carta p { color: var(--texto); margin-bottom: 14px; }
+  .firma { font-family: 'Dancing Script', cursive; font-size: 1.8rem; color: var(--rosa-osc); text-align: right; line-height: 1.2; }
 
-  /* Paso 5: pregunta */
-  .eleccion { display: flex; gap: 16px; justify-content: center; min-height: 52px; }
-  #si { background: var(--salvia); box-shadow: 0 6px 14px rgba(143, 174, 139, .5); }
-  #no { background: #d8cbc3; box-shadow: none; transition: left .25s, top .25s; z-index: 5; }
-
-  /* Puntitos de progreso */
-  #progreso {
-    position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
-    display: flex; gap: 8px; padding: 8px 12px;
-    background: rgba(255, 250, 244, .9); border-radius: 999px;
-    box-shadow: 0 4px 12px rgba(78, 40, 30, .18);
+  /* Paso 3: la invitación */
+  .plato { font-size: 4rem; line-height: 1; margin-bottom: 6px; }
+  .ticket {
+    background: #fff3cc; border-radius: 22px; padding: 18px 16px;
+    margin-bottom: 18px; display: grid; gap: 10px;
+    border: 2px solid #f9e3a0;
   }
-  #progreso i { width: 8px; height: 8px; border-radius: 50%; background: #ecd9cc; transition: background .3s, transform .3s; }
-  #progreso i.hecho { background: var(--rosa); transform: scale(1.15); }
+  .ticket div { font-size: 1.25rem; font-weight: 800; }
+  .ticket small { display: block; font-size: .85rem; font-weight: 700; color: var(--suave); text-transform: uppercase; letter-spacing: .08em; }
+  .coqueta { font-size: 1.08rem; color: var(--rosa-osc); }
 
-  /* Lluvia de emojis */
-  .cae {
-    position: fixed; top: -50px; pointer-events: none; z-index: 10;
-    animation: caer linear forwards;
+  /* Paso 4: final */
+  .grande { font-size: 4.2rem; line-height: 1; margin-bottom: 10px; }
+  .botones { display: grid; gap: 14px; justify-items: center; }
+  #whatsapp button { background: #7cc48a; box-shadow: 0 6px 0 #4f9b5f; color: #173b20; }
+  #deNuevo { background: none; box-shadow: none; min-height: 48px; color: var(--suave); text-decoration: underline; font-size: 1rem; }
+
+  /* Pétalos que caen despacito */
+  .petalo {
+    position: fixed; top: -30px; z-index: 0; pointer-events: none;
+    width: 14px; height: 22px; border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    background: var(--amarillo); opacity: .55;
+    animation: flotar linear infinite;
   }
-  @keyframes caer { to { transform: translateY(115vh) rotate(540deg); } }
+  .petalo.rosa { background: var(--rosa); }
+  @keyframes flotar {
+    to { transform: translate(60px, 110vh) rotate(420deg); }
+  }
+  .cae { position: fixed; top: -50px; pointer-events: none; z-index: 10; animation: caer linear forwards; }
+  @keyframes caer { to { transform: translateY(115vh) rotate(360deg); } }
+
+  #progreso { position: fixed; bottom: 22px; left: 0; right: 0; z-index: 1; display: flex; gap: 10px; justify-content: center; }
+  #progreso i { width: 11px; height: 11px; border-radius: 50%; background: #f1dfb0; transition: background .3s; }
+  #progreso i.hecho { background: var(--amarillo-osc); }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+    .petalo { display: none; }
+  }
 </style>
 </head>
 <body>
+
+<!-- Dibujo de una margarita amarilla, se reutiliza en toda la página -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="margarita" viewBox="-50 -50 100 100">
+      <g id="petalos" fill="#f6c533" stroke="#e8ad1c" stroke-width="1"></g>
+      <circle r="15" fill="#d9821f"/>
+      <circle r="15" fill="url(#puntitos)"/>
+    </symbol>
+    <pattern id="puntitos" width="5" height="5" patternUnits="userSpaceOnUse">
+      <circle cx="2.5" cy="2.5" r="1" fill="#b5651a"/>
+    </pattern>
+  </defs>
+</svg>
+
 <main>
 
+  <!-- 0: el ramo -->
   <section class="paso activo">
-    <button id="sobre" aria-label="Abrir el sobre">💌</button>
-    <p style="margin:18px 0 0">Tenés un mensaje.<br>Tocá el sobre para abrirlo.</p>
-  </section>
-
-  <section class="paso">
-    <h1>Hola, <span class="nombre"></span> ❤️</h1>
-    <p>Tengo un plan para hoy.<br>Pero no te lo voy a decir así nomás…</p>
-    <button data-sig>¿Qué plan? 👀</button>
-  </section>
-
-  <section class="paso">
-    <h1>Tres pistas</h1>
-    <p>Dalas vuelta de a una.</p>
-    <div class="pistas">
-      <div class="pista"><div class="pista-int">
-        <div class="cara frente">1</div>
-        <div class="cara dorso"><span>🌙</span>Es esta noche</div>
-      </div></div>
-      <div class="pista"><div class="pista-int">
-        <div class="cara frente">2</div>
-        <div class="cara dorso"><span>👫</span>Vos y yo, solitos</div>
-      </div></div>
-      <div class="pista"><div class="pista-int">
-        <div class="cara frente">3</div>
-        <div class="cara dorso"><span>😋</span>Es algo muy rico</div>
-      </div></div>
-    </div>
-    <button id="sigPistas" class="oculto" data-sig>Ya tengo una idea…</button>
-  </section>
-
-  <section class="paso">
-    <h1>¿Qué vamos a comer?</h1>
-    <p>A ver si adivinás.</p>
-    <div class="opciones">
-      <button data-op="Frío, frío… ❄️">🍣 Sushi</button>
-      <button data-op="Mmm, no. Otro día 😏">🍕 Pizza</button>
-      <button data-op="ok">🥔 Ñoquis</button>
-      <button data-op="Tibio… pero no 🔥">🥩 Asado</button>
-    </div>
-    <p id="respuesta"></p>
-  </section>
-
-  <section class="paso">
-    <div class="grande">🍝</div>
-    <h1>¡Ñoquis!</h1>
-    <p>Te invito a comer ñoquis esta noche.<br>Tocá para ver los detalles.</p>
-    <div class="datos">
-      <div class="dato" data-campo="hora">🕘 ¿A qué hora?</div>
-      <div class="dato" data-campo="lugar">📍 ¿Dónde?</div>
-    </div>
-    <button id="sigDatos" class="oculto" data-sig>Falta una cosa…</button>
-  </section>
-
-  <section class="paso">
-    <h1>¿Venís conmigo?</h1>
-    <p id="textoNo">Pensalo bien.</p>
-    <div class="eleccion">
-      <button id="si">¡Sí! 😍</button>
-      <button id="no">No</button>
+    <h1>¡Abu! 💛</h1>
+    <p>Te mandamos un ramito.</p>
+    <button id="ramo" class="cerrada" aria-label="Abrir el ramo">
+      <svg viewBox="0 0 300 330">
+        <g stroke="#6f9a5a" stroke-width="6" stroke-linecap="round" fill="none">
+          <path d="M150 300 Q120 200 80 110"/>
+          <path d="M150 300 Q150 180 150 70"/>
+          <path d="M150 300 Q180 200 220 110"/>
+          <path d="M150 300 Q130 220 105 180"/>
+          <path d="M150 300 Q170 220 195 180"/>
+        </g>
+        <g fill="#7fae67">
+          <ellipse cx="112" cy="225" rx="10" ry="24" transform="rotate(-40 112 225)"/>
+          <ellipse cx="188" cy="225" rx="10" ry="24" transform="rotate(40 188 225)"/>
+        </g>
+        <g class="flor"><use href="#margarita" x="45" y="75" width="70" height="70"/></g>
+        <g class="flor"><use href="#margarita" x="110" y="25" width="80" height="80"/></g>
+        <g class="flor"><use href="#margarita" x="185" y="75" width="70" height="70"/></g>
+        <g class="flor"><use href="#margarita" x="75" y="150" width="60" height="60"/></g>
+        <g class="flor"><use href="#margarita" x="165" y="150" width="60" height="60"/></g>
+        <path d="M95 235 L205 235 L165 325 L135 325 Z" fill="#f3b5b9"/>
+        <path d="M95 235 L205 235 L198 250 L102 250 Z" fill="#f7cbcd"/>
+        <path d="M150 262 q-26 -18 -30 2 q4 14 30 -2 q26 -18 30 2 q-4 14 -30 -2" fill="#c95d6a"/>
+        <circle cx="150" cy="262" r="6" fill="#b04a57"/>
+      </svg>
+    </button>
+    <p class="ayuda" id="ayudaRamo">👆 Tocá el ramo</p>
+    <div id="finRamo" class="oculto">
+      <h1 style="font-size:1.8rem">¡Feliz Día de la Madre!</h1>
+      <button data-sig>Seguir 🌼</button>
     </div>
   </section>
 
+  <!-- 1: tres florcitas -->
   <section class="paso">
-    <div class="grande">🥂</div>
-    <h1>¡Es una cita!</h1>
-    <p id="resumen"></p>
-    <p>Te amo ❤️</p>
-    <a id="whatsapp" hidden><button>Avisarme por WhatsApp</button></a>
+    <h1>Tres cositas que te queremos decir</h1>
+    <p class="ayuda">👆 Tocá cada flor</p>
+    <div class="mensajes">
+      <div class="mensaje cerrada" role="button"><svg viewBox="-50 -50 100 100"><g class="flor"><use href="#margarita" x="-50" y="-50" width="100" height="100"/></g></svg><span data-txt="Sos la abuela más linda del mundo 💛">¿Qué dirá?</span></div>
+      <div class="mensaje cerrada" role="button"><svg viewBox="-50 -50 100 100"><g class="flor"><use href="#margarita" x="-50" y="-50" width="100" height="100"/></g></svg><span data-txt="La más coqueta de toda la familia 💄">¿Y esta?</span></div>
+      <div class="mensaje cerrada" role="button"><svg viewBox="-50 -50 100 100"><g class="flor"><use href="#margarita" x="-50" y="-50" width="100" height="100"/></g></svg><span data-txt="Y la que más amor nos da 🤗">¿Y la última?</span></div>
+    </div>
+    <button id="sigMensajes" class="oculto" data-sig>Hay más… 💌</button>
+  </section>
+
+  <!-- 2: la cartita -->
+  <section class="paso">
+    <h1>Querida abu:</h1>
+    <div class="carta">
+      <p>Gracias por cada abrazo, cada comidita rica, cada consejo y cada vez que nos hiciste sentir los más queridos del mundo.</p>
+      <p>Este Día de la Madre queremos devolverte un poquito de todo ese amor.</p>
+      <div class="firma"></div>
+    </div>
+    <button data-sig>¿Y qué hacemos? 👀</button>
+  </section>
+
+  <!-- 3: la invitación -->
+  <section class="paso">
+    <div class="plato">🍝</div>
+    <h1>¡Te invitamos a cenar ñoquis!</h1>
+    <div class="ticket">
+      <div><small>Cuándo</small><span id="tFecha"></span></div>
+      <div><small>Hora</small><span id="tHora"></span></div>
+      <div><small>Dónde</small><span id="tLugar"></span></div>
+    </div>
+    <p class="coqueta">Ponete tu ropa más linda y tus aros preferidos,<br>que la reina de la noche sos vos 👑</p>
+    <button id="si">¡Sí, voy! 💃</button>
+  </section>
+
+  <!-- 4: final -->
+  <section class="paso">
+    <div class="grande">🌻</div>
+    <h1>¡Qué alegría, abu!</h1>
+    <p>Te esperamos con muchísimas ganas.<br>Te queremos con todo el corazón.</p>
+    <div class="firma" style="text-align:center;margin-bottom:24px"></div>
+    <div class="botones">
+      <a id="whatsapp" hidden><button>Avisarles que voy 💬</button></a>
+      <button id="deNuevo">Ver de nuevo</button>
+    </div>
   </section>
 
 </main>
@@ -250,17 +253,24 @@
 <script>
 // ====== Editá estos datos ======
 const CONFIG = {
-  nombre: 'mi amorcito',    // cómo le decís
-  hora: '20:30',
-  lugar: 'La fija, you know', // vacío = "Es sorpresa"
-  whatsapp: '5493364337950', // tu número con código de país, sin + ni espacios (ej: 5493364123456). Vacío = sin botón
+  fecha: 'Domingo 18 de octubre',
+  hora: '21:00',
+  lugar: '',                      // vacío = "Es sorpresa"
+  firma: 'Tus nietos que te adoran',
+  whatsapp: '5493364337950',      // a quién le responde. Vacío = sin botón
 };
 // ===============================
+
+// Arma los pétalos de la margarita
+const petalos = document.getElementById('petalos');
+for (let i = 0; i < 14; i++) {
+  petalos.insertAdjacentHTML('beforeend',
+    `<ellipse cy="-28" rx="8" ry="20" transform="rotate(${i * 360 / 14})"/>`);
+}
 
 const pasos = [...document.querySelectorAll('.paso')];
 const progreso = document.getElementById('progreso');
 let actual = 0;
-
 progreso.innerHTML = pasos.map(() => '<i></i>').join('');
 
 function irA(n) {
@@ -268,100 +278,91 @@ function irA(n) {
   actual = n;
   pasos[actual].classList.add('activo');
   [...progreso.children].forEach((p, i) => p.classList.toggle('hecho', i <= actual));
+  scrollTo(0, 0);
 }
-const siguiente = () => irA(actual + 1);
+document.querySelectorAll('[data-sig]').forEach(b => b.addEventListener('click', () => irA(actual + 1)));
+irA(0);
 
-function lluvia(emojis, cantidad = 40) {
+function lluvia(emojis, cantidad) {
   for (let i = 0; i < cantidad; i++) {
     const e = document.createElement('span');
     e.className = 'cae';
     e.textContent = emojis[Math.floor(Math.random() * emojis.length)];
     e.style.left = Math.random() * 100 + 'vw';
-    e.style.fontSize = 1.2 + Math.random() * 1.6 + 'rem';
-    e.style.animationDuration = 2.5 + Math.random() * 2.5 + 's';
-    e.style.animationDelay = Math.random() * 1.2 + 's';
+    e.style.fontSize = 1.3 + Math.random() * 1.5 + 'rem';
+    e.style.animationDuration = 3.5 + Math.random() * 3 + 's';
+    e.style.animationDelay = Math.random() * 1.5 + 's';
     e.addEventListener('animationend', () => e.remove());
     document.body.appendChild(e);
   }
 }
 
-document.querySelectorAll('.nombre').forEach(el => el.textContent = CONFIG.nombre);
-document.getElementById('sobre').addEventListener('click', siguiente);
-document.querySelectorAll('[data-sig]').forEach(b => b.addEventListener('click', siguiente));
-irA(0);
-
-// Pistas
-const pistas = [...document.querySelectorAll('.pista')];
-pistas.forEach(p => p.addEventListener('click', () => {
-  p.classList.add('vuelta');
-  if (pistas.every(x => x.classList.contains('vuelta'))) {
-    document.getElementById('sigPistas').classList.add('aparece');
-  }
-}));
-
-// Adivinanza
-const respuesta = document.getElementById('respuesta');
-document.querySelectorAll('[data-op]').forEach(b => b.addEventListener('click', () => {
-  if (b.dataset.op === 'ok') {
-    siguiente();
-    lluvia(['🥔', '🍝', '🍅', '🧀', '🌿']);
-  } else {
-    b.classList.add('mal');
-    respuesta.textContent = b.dataset.op;
-  }
-}));
-
-// Detalles
-const lugar = CONFIG.lugar || 'Es sorpresa 🤫';
-const valores = { hora: '🕘 ' + CONFIG.hora + ' hs', lugar: '📍 ' + lugar };
-const datos = [...document.querySelectorAll('.dato')];
-datos.forEach(d => d.addEventListener('click', () => {
-  d.textContent = valores[d.dataset.campo];
-  d.classList.add('abierto');
-  if (datos.every(x => x.classList.contains('abierto'))) {
-    document.getElementById('sigDatos').classList.add('aparece');
-  }
-}));
-
-// El "No" que se escapa
-const no = document.getElementById('no');
-const textoNo = document.getElementById('textoNo');
-const frasesNo = ['¿Segura? 🤨', 'Ese botón no funciona bien…', 'Dale, que hay ñoquis 🥔', 'No hay escapatoria 😘'];
-let intentos = 0;
-
-function escapar(ev) {
-  ev.preventDefault();
-  if (intentos >= frasesNo.length) {
-    no.textContent = '¡Sí! 😍';
-    no.style.background = 'var(--salvia)';
-    no.removeEventListener('pointerdown', escapar);
-    no.removeEventListener('pointerenter', escapar);
-    no.addEventListener('click', aceptar);
-    textoNo.textContent = 'Así me gusta.';
-    return;
-  }
-  textoNo.textContent = frasesNo[intentos++];
-  const r = no.getBoundingClientRect();
-  document.body.appendChild(no); // fuera de la tarjeta rotada, para que 'fixed' sea respecto a la pantalla
-  no.style.position = 'fixed';
-  no.style.left = Math.random() * (innerWidth - r.width - 24) + 12 + 'px';
-  no.style.top = Math.random() * (innerHeight - r.height - 90) + 12 + 'px';
+// Pétalos de fondo, cayendo despacito
+for (let i = 0; i < 12; i++) {
+  const p = document.createElement('span');
+  p.className = 'petalo' + (i % 3 === 0 ? ' rosa' : '');
+  p.style.left = Math.random() * 100 + 'vw';
+  p.style.animationDuration = 12 + Math.random() * 10 + 's';
+  p.style.animationDelay = -Math.random() * 20 + 's';
+  document.body.appendChild(p);
 }
-no.addEventListener('pointerdown', escapar);
-no.addEventListener('pointerenter', escapar);
 
-function aceptar() {
-  document.getElementById('resumen').textContent =
-    'Hoy, ' + CONFIG.hora + ' hs' + (CONFIG.lugar ? ', en ' + CONFIG.lugar : '') + '. Ponete linda (más todavía).';
+// Textos configurables
+document.querySelectorAll('.firma').forEach(f => f.textContent = CONFIG.firma);
+document.getElementById('tFecha').textContent = CONFIG.fecha;
+document.getElementById('tHora').textContent = CONFIG.hora + ' hs';
+document.getElementById('tLugar').textContent = CONFIG.lugar || 'Es sorpresa 🤫';
+
+// 0: abrir el ramo
+const ramo = document.getElementById('ramo');
+ramo.addEventListener('click', () => {
+  if (!ramo.classList.contains('cerrada')) return;
+  ramo.classList.remove('cerrada');
+  document.getElementById('ayudaRamo').style.display = 'none';
+  setTimeout(() => {
+    document.getElementById('finRamo').classList.add('aparece');
+    lluvia(['🌼', '🌻', '💛'], 25);
+  }, 900);
+});
+
+// 1: florcitas con mensajes
+const mensajes = [...document.querySelectorAll('.mensaje')];
+mensajes.forEach(m => m.addEventListener('click', () => {
+  m.classList.remove('cerrada');
+  m.classList.add('abierta');
+  const s = m.querySelector('span');
+  s.textContent = s.dataset.txt;
+  if (mensajes.every(x => x.classList.contains('abierta'))) {
+    document.getElementById('sigMensajes').classList.add('aparece');
+  }
+}));
+
+// 3 → 4: confirma
+document.getElementById('si').addEventListener('click', () => {
   if (CONFIG.whatsapp) {
     const a = document.getElementById('whatsapp');
-    a.href = 'https://wa.me/' + CONFIG.whatsapp + '?text=' + encodeURIComponent('¡Sí, quiero ñoquis! 🥔❤️');
+    a.href = 'https://wa.me/' + CONFIG.whatsapp + '?text=' +
+      encodeURIComponent('¡Sí, voy a la cena del ' + CONFIG.fecha.toLowerCase() + '! 🌼💛');
     a.hidden = false;
   }
-  siguiente();
-  lluvia(['❤️', '💕', '🥔', '🍷', '✨'], 60);
-}
-document.getElementById('si').addEventListener('click', aceptar);
+  irA(4);
+  lluvia(['🌼', '🌻', '💛', '🌷', '✨'], 60);
+});
+
+// Volver a empezar
+document.getElementById('deNuevo').addEventListener('click', () => {
+  ramo.classList.add('cerrada');
+  document.getElementById('ayudaRamo').style.display = '';
+  document.getElementById('finRamo').classList.remove('aparece');
+  const preguntas = ['¿Qué dirá?', '¿Y esta?', '¿Y la última?'];
+  mensajes.forEach((m, i) => {
+    m.classList.add('cerrada');
+    m.classList.remove('abierta');
+    m.querySelector('span').textContent = preguntas[i];
+  });
+  document.getElementById('sigMensajes').classList.remove('aparece');
+  irA(0);
+});
 </script>
 </body>
 </html>
